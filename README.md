@@ -64,4 +64,4 @@ This repository uses the [image](/.devcontainer/Dockerfile) named `python:3.12` 
 
 4. Configuration:
    - Adjust hyperparameters in `SegmentSelectorConfiguration` class
-   - Modify model settings in `modelsettings` for different behaviors
+   - Modify model settings in `MODEL_SETTINGS` for different behaviors
