@@ -63,5 +63,5 @@ This repository uses the [image](/.devcontainer/Dockerfile) named `python:3.12` 
    - Define static methods in `SegmentSelector` class to automatically register tools
 
 4. Configuration:
-   - Adjust hyperparameters in `SegmentSelectorConfiguration` class
-   - Modify model settings in `MODEL_SETTINGS` for different behaviors
+   - Adjust hyperparameters in the `SegmentSelectorConfiguration` class
+   - Modify `MODEL_SETTINGS` in the `SegmentSelectorConfiguration` for different behaviors
