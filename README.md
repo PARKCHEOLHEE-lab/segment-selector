@@ -5,9 +5,9 @@ A naive polygon segment selection test using [OpenAI Agents SDK](https://openai.
 <br>
 
 <div style="display: flex">
-    <img src="segment_selector/runs/TestcaseA_0.png" width="33%">
-    <img src="segment_selector/runs/TestcaseB_2.png" width="33%">
-    <img src="segment_selector/runs/TestcaseC_2.png" width="33%">
+    <img src="segment_selector/runs/TestcaseA_0.png" width="32%">
+    <img src="segment_selector/runs/TestcaseB_2.png" width="32%">
+    <img src="segment_selector/runs/TestcaseC_2.png" width="32%">
 </div>
 <br>
 <p align="center" color="gray">
