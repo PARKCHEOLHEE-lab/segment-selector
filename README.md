@@ -22,7 +22,7 @@ This repository uses the [image](/.devcontainer/Dockerfile) named `python:3.12` 
 2. Clone the repository.
 
     ```
-        git clone https://github.com/PARKCHEOLHEE-lab/segment-selector.git
+    git clone https://github.com/PARKCHEOLHEE-lab/segment-selector.git
     ```
 
 3. Open the project with VSCode.
@@ -36,9 +36,32 @@ This repository uses the [image](/.devcontainer/Dockerfile) named `python:3.12` 
 
 ### src
 - `selector.py`: Implementation of the segment selector agent
-- `plotter.py`: Visualizer
-- `testsets.py`: Test cases, each case has a polygon boundary and prompt for selecting segments
+- `plotter.py`: Visualizer for selected segments
+- `testsets.py`: Test cases with polygon boundaries and selection prompts
 - `main.py`: Entry point for running the segment selector
 
 ### runs
 - `Testcase*.png`: Visualization results of different test cases
+
+<br>
+
+
+# How to run
+
+1. Set up OpenAI API key:
+   ```
+   export OPENAI_API_KEY=your_api_key
+   ```
+
+2. Run the main script:
+   ```
+   python segment_selector/src/main.py
+   ```
+
+3. Adding New Tools:
+   - Use `@function_tool` decorator to add new tools for the agent
+   - Define static methods in `SegmentSelector` class to automatically register tools
+
+4. Configuration:
+   - Adjust hyperparameters in `SegmentSelectorConfiguration` class
+   - Modify model settings in `modelsettings` for different behaviors
