@@ -20,14 +20,11 @@ class TestcaseA:
         ]
     )
     BOUNDARY_COORDS = list(BOUNDARY.exterior.coords)
-    CORES = []
-    CORES_COORDS = []
     TEXTS = [
-        f"다음 다각형의 우측 하단의 모든 선분을 선택하시오: {BOUNDARY_COORDS}",
+        f"Select all segments in the right bottom of the following polygon: {BOUNDARY_COORDS}",
         f"Select the top left segments of the following polygon: {BOUNDARY_COORDS}",
         f"Select 4 segments in the right and left of the following polygon: {BOUNDARY_COORDS}",
-        f"Select randomly 3 segments of the following polygon: {BOUNDARY_COORDS}, \
-          the polygon has {len(BOUNDARY_COORDS) - 1} segments",
+        f"Select randomly 3 segments of the following polygon: {BOUNDARY_COORDS}",
     ]
 
 
@@ -48,14 +45,11 @@ class TestcaseB:
         ]
     )
     BOUNDARY_COORDS = list(BOUNDARY.exterior.coords)
-    CORES = []
-    CORES_COORDS = []
     TEXTS = [
         f"Select all segments of the following polygon: {BOUNDARY_COORDS}",
-        f"다음 다각형의 아무 선분 1개를 선택하시오: {BOUNDARY_COORDS}",
+        f"Select any one segment of the following polygon: {BOUNDARY_COORDS}",
         f"Select 2 segments in the right and left of the following polygon: {BOUNDARY_COORDS}",
-        f"Select randomly half of the segments of the following polygon: {BOUNDARY_COORDS}, \
-          the polygon has {len(BOUNDARY_COORDS) - 1} segments",
+        f"Select randomly half of the segments of the following polygon: {BOUNDARY_COORDS}",
     ]
 
 
@@ -77,95 +71,19 @@ class TestcaseC:
         ]
     )
     BOUNDARY_COORDS = list(BOUNDARY.exterior.coords)
-    CORES = [
-        Polygon(
-            [
-                [27.631556, -13.228409],
-                [32.79003, -13.228409],
-                [32.79003, -8.397458],
-                [27.631556, -8.397458],
-                [27.631556, -13.228409],
-            ]
-        ),
-        Polygon(
-            [
-                [0.201576, -13.883454],
-                [5.36005, -13.883454],
-                [5.36005, -9.052502],
-                [0.201576, -9.052502],
-                [0.201576, -13.883454],
-            ]
-        ),
+    TEXTS = [
+        f"Select index 3 segment of the following polygon: {BOUNDARY_COORDS}",
+        f"Select indices 3, 5, 6, 1 segment of the following polygon: {BOUNDARY_COORDS}",
+        f"Select segments with odd indices of the following polygon: {BOUNDARY_COORDS}",
+        f"Select indices any 3 segments from the indices 0, 1, 2, 3, 4 of the following polygon: {BOUNDARY_COORDS}",
     ]
-    CORES_COORDS = [list(core.exterior.coords) for core in CORES]
-    TEXTS = []
-
-
-class TestcaseD:
-    BOUNDARY = Polygon(
-        [
-            [29.842331, 10.435066],
-            [26.988442, 17.324962],
-            [20.098547, 20.17885],
-            [13.208651, 17.324962],
-            [10.354763, 10.435066],
-            [13.208651, 3.54517],
-            [20.098547, 0.691282],
-            [26.988442, 3.54517],
-            [29.842331, 10.435066],
-        ]
-    )
-    BOUNDARY_COORDS = list(BOUNDARY.exterior.coords)
-    CORES = []
-    CORES_COORDS = []
-    TEXTS = []
-
-
-class TestcaseE:
-    BOUNDARY = Polygon(
-        [
-            [11.224343, 25.934186],
-            [11.224343, 13.200125],
-            [15.800646, 13.200125],
-            [15.800646, 16.58261],
-            [23.361495, 16.58261],
-            [23.361495, 19.368186],
-            [28.99897, 19.368186],
-            [28.99897, 21.225237],
-            [36.957759, 21.225237],
-            [36.957759, 31.571661],
-            [31.917193, 31.571661],
-            [31.917193, 28.918732],
-            [25.417516, 28.918732],
-            [25.417516, 28.122853],
-            [17.259758, 28.122853],
-            [17.259758, 25.934186],
-            [11.224343, 25.934186],
-        ]
-    )
-    BOUNDARY_COORDS = list(BOUNDARY.exterior.coords)
-    CORES = [
-        Polygon(
-            [
-                [28.203091, 23.612873],
-                [34.304829, 23.612873],
-                [34.304829, 26.730065],
-                [28.203091, 26.730065],
-                [28.203091, 23.612873],
-            ]
-        )
-    ]
-    CORES_COORDS = [list(core.exterior.coords) for core in CORES]
-    TEXTS = []
 
 
 class TestSets:
-    for testcase in [v for k, v in globals().items() if k.startswith("Testcase")]:
-        assert hasattr(testcase, "BOUNDARY")
-        assert hasattr(testcase, "BOUNDARY_COORDS")
-        assert hasattr(testcase, "CORES")
-        assert hasattr(testcase, "CORES_COORDS")
-        assert hasattr(testcase, "TEXTS")
+    def __iter__(self):
+        for testcase in [v for k, v in globals().items() if k.startswith("Testcase")]:
+            assert hasattr(testcase, "BOUNDARY")
+            assert hasattr(testcase, "BOUNDARY_COORDS")
+            assert hasattr(testcase, "TEXTS")
 
-        locals()[testcase.__name__] = testcase
-        del testcase
+            yield testcase
