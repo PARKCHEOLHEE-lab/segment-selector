@@ -14,7 +14,7 @@ class Plotter:
         final_output: SegmentSelectorOutput,
         title: str = "",
     ):
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(8, 5))
 
         ax.scatter(polygon.exterior.xy[0], polygon.exterior.xy[1], color="black", s=5)
         ax.plot(polygon.exterior.xy[0], polygon.exterior.xy[1], color="black", linewidth=0.5)
