@@ -213,9 +213,12 @@ class SegmentSelector:
     def tools() -> List[FunctionTool]:
         """Automatically collect all function tools"""
         tools = []
+        tools_str = "tools:\n"
         for value in SegmentSelector.__dict__.values():
             if "FunctionTool" in str(value):
                 tools.append(value.__func__)
+                tools_str += "    " + value.__func__.name + "()\n"
+        print(tools_str)
 
         return tools
 
