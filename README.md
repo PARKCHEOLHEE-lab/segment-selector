@@ -1,6 +1,6 @@
 # segment-selector
 
-A naive polygon segment selector using [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) function calling for prompt-based segment selection. The repository explores possibilities for an <mark>AI-assisted geometric task</mark>.
+A naive polygon segment selector using [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) function calling for prompt-based segment selection. The repository explores possibilities for an AI-assisted geometric task.
 
 <br>
 
@@ -8,6 +8,12 @@ A naive polygon segment selector using [OpenAI Agents SDK](https://openai.github
     <img src="segment_selector/runs/TestcaseA_0.png" width="32%">
     <img src="segment_selector/runs/TestcaseB_2.png" width="32%">
     <img src="segment_selector/runs/TestcaseC_2.png" width="32%">
+</div>
+<br>
+<div style="display: flex">
+    <img src="segment_selector/runs/TestcaseA_2.png" width="32%">
+    <img src="segment_selector/runs/TestcaseB_3.png" width="32%">
+    <img src="segment_selector/runs/TestcaseC_3.png" width="32%">
 </div>
 <br>
 <p align="center" color="gray">
