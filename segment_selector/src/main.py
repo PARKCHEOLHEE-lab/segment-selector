@@ -8,6 +8,7 @@ from selector import SegmentSelector, SegmentSelectorConfiguration, SegmentSelec
 
 
 if __name__ == "__main__":
+    assert os.environ.get("OPENAI_API_KEY") is not None
     agent = Agent(
         name=SegmentSelectorConfiguration.NAME,
         model=SegmentSelectorConfiguration.MODEL_NAME,
