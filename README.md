@@ -49,6 +49,9 @@ This repository uses the [image](/.devcontainer/Dockerfile) named `python:3.12` 
 ### runs
 - `Testcase*.png`: Visualization results of different test cases
 
+### tests
+- `test_selection.py`: Unit tests about whether the agent's decisions are intended results
+
 <br>
 
 

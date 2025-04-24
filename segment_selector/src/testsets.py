@@ -80,10 +80,14 @@ class TestcaseC:
 
 
 class TestSets:
-    def __iter__(self):
+    def __init__(self):
         for testcase in [v for k, v in globals().items() if k.startswith("Testcase")]:
             assert hasattr(testcase, "BOUNDARY")
             assert hasattr(testcase, "BOUNDARY_COORDS")
             assert hasattr(testcase, "TEXTS")
 
+            self.__dict__[testcase.__name__] = testcase
+
+    def __iter__(self):
+        for testcase in [v for k, v in self.__dict__.items() if k.startswith("Testcase")]:
             yield testcase
