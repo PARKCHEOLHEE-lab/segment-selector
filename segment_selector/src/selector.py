@@ -215,9 +215,9 @@ class SegmentSelector:
         tools = []
         tools_str = "tools:\n"
         for value in SegmentSelector.__dict__.values():
-            if "FunctionTool" in str(value):
+            if isinstance(value, staticmethod) and isinstance(value.__func__, FunctionTool):
                 tools.append(value.__func__)
-                tools_str += "    " + value.__func__.name + "()\n"
+                tools_str += f"    {value.__func__.name}()\n"
         print(tools_str)
 
         return tools
