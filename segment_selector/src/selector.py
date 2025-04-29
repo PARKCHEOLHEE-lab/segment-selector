@@ -121,15 +121,6 @@ class SegmentSelectorConfiguration:
         * Opposite directions requested (left and right, top and bottom, etc.):
             - Use lower threshold (0.45 ~ 0.65) for more flexible selection
         * Default value is {SIMILARITY_THRESHOLD_MIN} if not specified
-
-    ## IMPORTANT:
-    - You must return a JSON object with a single key "selected_indices" containing the list of indices.
-    - DO NOT QUESTION THE INSTRUCTIONS, like:
-        - I need to know which specific directions or criteria you want to use for the selection" or anything like that.
-    - example:
-        ```json
-        {{"selected_indices": [1, 2, 3]}}
-        ```
     """
 
 
