@@ -4,7 +4,7 @@ import pytest
 
 from agents import Agent, Runner
 
-sys.path.append(os.path.abspath(os.path.join(__file__, "../../src")))
+sys.path.append(os.path.abspath(os.path.join(__file__, "../../")))
 
 from src.testsets import TestSets
 from src.selector import SegmentSelector, SegmentSelectorConfiguration, SegmentSelectorOutput
